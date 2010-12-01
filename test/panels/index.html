@@ -22,10 +22,13 @@
     <!-- MONOCLE FLIPPERS -->
     <script type="text/javascript" src="../../src/controls/panel.js"></script>
     <script type="text/javascript" src="../../src/panels/twopane.js"></script>
+    <script type="text/javascript" src="../../src/panels/twopane_right.js"></script>
     <script type="text/javascript" src="../../src/panels/marginal.js"></script>
+    <script type="text/javascript" src="../../src/panels/marginal_right.js"></script>
     <script type="text/javascript" src="../../src/panels/imode.js"></script>
     <script type="text/javascript" src="../../src/dimensions/columns.js"></script>
     <script type="text/javascript" src="../../src/flippers/slider.js"></script>
+    <script type="text/javascript" src="../../src/flippers/slider_right.js"></script>
     <script type="text/javascript" src="../../src/dimensions/vert.js"></script>
     <script type="text/javascript" src="../../src/flippers/legacy.js"></script>
 
@@ -115,11 +118,31 @@
             { panels: Monocle.Panels.TwoPane }
           );
 
+          // TWOPANE (RIGHT)
+          window.reader1R = Monocle.Reader(
+            'twopane_right',
+            bookData,
+            {
+                panels: Monocle.Panels.TwoPaneRight,
+                flipper: Monocle.Flippers.SliderRight
+            }
+          );
+
           // MARGINAL
           window.reader2 = Monocle.Reader(
             'marginal',
             bookData,
             { panels: Monocle.Panels.Marginal }
+          );
+
+          // MARGINAL
+          window.reader2R = Monocle.Reader(
+            'marginal_right',
+            bookData,
+            {
+                panels: Monocle.Panels.MarginalRight,
+                flipper: Monocle.Flippers.SliderRight
+            }
           );
 
           // I-MODE
@@ -145,12 +168,29 @@
     </div>
 
     <div class="readerInfo">
+      <h2>Two-Pane (Right)</h2>
+      <div class="reader" id="twopane_right"></div>
+      <p>
+        Two panels for books turn to the right, both 50% width.
+      </p>
+    </div>
+
+    <div class="readerInfo">
       <h2>Marginal</h2>
       <div class="reader" id="marginal"></div>
       <p>
         Two panels, the same width as the page margins.
       </p>
     </div>
+
+    <div class="readerInfo">
+      <h2>Marginal (Right)</h2>
+      <div class="reader" id="marginal_right"></div>
+      <p>
+        Two panels, the same width as the page margins (for right-turning books)
+      </p>
+    </div>
+
 
     <div class="readerInfo">
       <h2>I-Mode</h2>

@@ -565,7 +565,7 @@ Monocle.Flippers.SliderRight = function (reader) {
 
 
 // Constants
-Monocle.Flippers.SliderRight.DEFAULT_PANELS_CLASS = Monocle.Panels.TwoPane;
+Monocle.Flippers.SliderRight.DEFAULT_PANELS_CLASS = Monocle.Panels.TwoPaneRight;
 Monocle.Flippers.SliderRight.FORWARDS = 1;
 Monocle.Flippers.SliderRight.BACKWARDS = -1;
 Monocle.Flippers.SliderRight.durations = {
@@ -573,4 +573,4 @@ Monocle.Flippers.SliderRight.durations = {
   FOLLOW_CURSOR: 100
 }
 
-Monocle.pieceLoaded('flippers/slider');
+Monocle.pieceLoaded('flippers/slider_right');
