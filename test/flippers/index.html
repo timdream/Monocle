@@ -18,6 +18,7 @@
 
     <!-- MONOCLE FLIPPERS -->
     <script type="text/javascript" src="../../src/flippers/slider.js"></script>
+    <script type="text/javascript" src="../../src/flippers/slider_right.js"></script>
     <script type="text/javascript" src="../../src/flippers/scroller.js"></script>
     <script type="text/javascript" src="../../src/flippers/instant.js"></script>
     <script type="text/javascript" src="../../src/flippers/legacy.js"></script>
@@ -105,20 +106,32 @@
             { flipper: Monocle.Flippers.Slider }
           );
           window.reader2 = Monocle.Reader(
+            'slider_right',
+            bookData,
+            { flipper: Monocle.Flippers.SliderRight }
+          );
+          window.reader3 = Monocle.Reader(
             'scroller',
             bookData,
             { flipper: Monocle.Flippers.Scroller }
           );
-          window.reader3 = Monocle.Reader(
+          window.reader4 = Monocle.Reader(
             'instant',
             bookData,
             { flipper: Monocle.Flippers.Instant }
           );
-          window.reader4 = Monocle.Reader(
+          window.reader5 = Monocle.Reader(
             'legacy',
             bookData,
             { flipper: Monocle.Flippers.Legacy }
           );
+          
+          /* Alt style for slider_right */
+          Monocle.Styles.page["left"] = "5px";
+          Monocle.Styles.page["right"] = "0";
+          Monocle.Styles.page["-webkit-box-shadow"] = "-2px 0 2px #999";
+          Monocle.Styles.page["-moz-box-shadow"] = "-2px 0 2px #999";
+          window.reader2.reapplyStyles();
         }
       );
     </script>
@@ -133,6 +146,15 @@
       <p>
         Pages slide out of view to left (forwards) and
         into view from left (back).
+      </p>
+    </div>
+
+    <div class="readerInfo">
+      <h2>Slider (To The Right)</h2>
+      <div class="reader" id="slider_right"></div>
+      <p>
+        Pages slide out of view to right (forwards) and
+        into view from right (back).
       </p>
     </div>
 
