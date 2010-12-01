@@ -24,6 +24,7 @@
     <!-- MONOCLE FLIPPERS -->
     <script type="text/javascript" src="../../src/dimensions/columns.js"></script>
     <script type="text/javascript" src="../../src/flippers/slider.js"></script>
+    <script type="text/javascript" src="../../src/flippers/slider_right.js"></script>
     <script type="text/javascript" src="../../src/flippers/scroller.js"></script>
     <script type="text/javascript" src="../../src/flippers/instant.js"></script>
     <script type="text/javascript" src="../../src/dimensions/vert.js"></script>
@@ -124,6 +125,11 @@
             { flipper: Monocle.Flippers.Slider }
           );
           window.reader4 = Monocle.Reader(
+            'slider_right',
+            bookData,
+            { flipper: Monocle.Flippers.SliderRight }
+          );
+          window.reader5 = Monocle.Reader(
             'legacy',
             bookData,
             { flipper: Monocle.Flippers.Legacy }
@@ -157,6 +163,15 @@
       <p>
         Pages slide out of view to left (forwards) and
         into view from left (back).
+      </p>
+    </div>
+
+    <div class="readerInfo">
+      <h2>Slider (To the Right)</h2>
+      <div class="reader" id="slider_right"></div>
+      <p>
+        Pages slide out of view to right (forwards) and
+        into view from right (back).
       </p>
     </div>
 
