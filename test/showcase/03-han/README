@@ -1,0 +1,26 @@
+
+ This book is aim to showcase the modifications on Monocle
+ for the script to render a book in East Asian layout, i.e.:
+
+ * page turns to the right instead of left
+ * text is written in vertical, paragraph goes from right to left
+   (hance the page turns)
+
+ Current status: INCOMPLETE.
+
+ Keep in mind a INCOMPLETE version does not render book as they should
+ look like. If you need a real example, come to Japan, Taiwan, or Hong Kong
+ to get a Bunko, or Novel.
+
+ Completed function:
+
+ * Flipper 'slider_right' that turn pages to the right
+ * Panels 'twopanel_right' and 'marginal_right' that invert
+   the 'zones' of interaction
+ * Right-turning book style (style of this book)
+
+ To be done:
+
+ * A Javascript based text layout 'engine' to handle vertical writing
+   (since CSS3 text is not yet introduced in any browser)
+
