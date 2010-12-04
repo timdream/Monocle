@@ -2,6 +2,13 @@
 
   Monocle.Styles.container.left = "24px";
 
+  Monocle.Dimensions.VerticalWriting.TaketoriOptions = {
+    "disableShiftTen": true
+  };
+
+  /* Location of taketori.js relative to components dir */
+  Monocle.Dimensions.VerticalWriting.TaketoriURL = '../../../../src/taketori_js/taketori.js';
+
   var bookData = {
     getComponents: function () {
       return [

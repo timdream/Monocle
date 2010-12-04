@@ -18,9 +18,9 @@
  * Panels 'twopanel_right' and 'marginal_right' that invert
    the 'zones' of interaction
  * Right-turning book style (style of this book)
+ * Dimensions 'vertical_writing' that load Taketori.js into frame 
 
  To be done:
 
- * A Javascript based text layout 'engine' to handle vertical writing
-   (since CSS3 text is not yet introduced in any browser)
+ * Complete paging and measurement in vertical_writing Dimension.
 
