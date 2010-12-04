@@ -18,7 +18,7 @@ Monocle.Flippers.SliderRight = function (reader) {
 
 
   function addPage(pageDiv) {
-    pageDiv.m.dimensions = new Monocle.Dimensions.Columns(pageDiv);
+    pageDiv.m.dimensions = new Monocle.Dimensions.VerticalWriting(pageDiv);
   }
 
 
