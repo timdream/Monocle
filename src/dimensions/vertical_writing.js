@@ -42,6 +42,8 @@ Monocle.Dimensions.VerticalWriting = function (pageDiv) {
     var doc = evt.m['document'];
     Monocle.Styles.applyRules(doc.body, k.BODY_STYLES);
 
+    doc.body.style.visibility = 'hidden';
+
     // BROWSERHACK: WEBKIT bug - iframe needs scrollbars explicitly disabled.
     if (Monocle.Browser.is.WebKit) {
       doc.documentElement.style.overflow = 'hidden';
@@ -62,18 +64,21 @@ Monocle.Dimensions.VerticalWriting = function (pageDiv) {
       function () {
         if (!doc.defaultView.Taketori) return;
         window.clearTimeout(t);
-        var o = doc.createElement('div');
-        o.style.width = '100%';
-        o.style.height = '100%';
-        while (doc.body.firstChild) {
-          o.appendChild(doc.body.firstChild);
-        }
-        o.id = 'taketori-body';
-        doc.body.appendChild(o);
-        (new doc.defaultView.Taketori()).set(opts).element('taketori-body').toVertical(false);
-
+        //doc.body.id = 'taketori-body';
+        (new doc.defaultView.Taketori()).set(opts).toVertical(false);
+        doc.body.style.visibility = 'visible'; // Even better if after taketori.js is loaded.
       },
-      20
+      10
+    );
+
+    window.setTimeout(
+      function () {
+        if (!doc.defaultView.Taketori) {
+          console.log('Failed to load Taketori.js after 2 sec.');
+        }
+        window.clearTimeout(t);
+      },
+      2000
     );
 
     p.dirty = true;
@@ -107,17 +112,12 @@ Monocle.Dimensions.VerticalWriting = function (pageDiv) {
 
 Monocle.Dimensions.VerticalWriting.BODY_STYLES = {
   "position": "absolute",
-  "height": "100%"
+  "height": "100%",
+  "width": "100%"
 }
 
 Monocle.Dimensions.VerticalWriting.TaketoriURL = '';
 Monocle.Dimensions.VerticalWriting.TaketoriOptions = {};
-
-if (Monocle.Browser.has.iframeDoubleWidthBug) {
-  Monocle.Dimensions.VerticalWriting.BODY_STYLES["min-width"] = "200%";
-} else {
-  Monocle.Dimensions.VerticalWriting.BODY_STYLES["width"] = "100%";
-}
 
 /* Overwrite default style rules in Reader since we are not using columns 
  * and max-width should not applied to rotated blocks.
