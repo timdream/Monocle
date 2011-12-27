@@ -3,7 +3,8 @@
   Monocle.Styles.container.left = "24px";
 
   Monocle.Dimensions.VerticalWriting.TaketoriOptions = {
-    "disableShiftTen": true
+    lang: 'zh-tw',
+	fontFamily: 'kai'
   };
 
   /* Location of taketori.js relative to components dir */
@@ -167,7 +168,7 @@
 
           reader.addPageStyles("body { " +
             "color: #210;" +
-            "font-family: '教育部標準楷書', '全字庫正楷體', '標楷體', 'BiauKai', 'STKaiti', serif;" +
+    //        "font-family: '教育部標準楷書', '全字庫正楷體', '標楷體', 'BiauKai', 'STKaiti', serif;" +
             "line-height: 1.2;" +
           "}");
 

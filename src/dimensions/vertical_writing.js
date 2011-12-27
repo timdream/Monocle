@@ -55,8 +55,6 @@ Monocle.Dimensions.VerticalWriting = function (pageDiv) {
     doc.body.appendChild(s);
 
     var opts = Monocle.Dimensions.VerticalWriting.TaketoriOptions;
-    //opts.height = p.page.m.sheafDiv.clientHeight.toString(10) + 'px';
-    opts.height = doc.defaultView.innerHeight.toString(10) + 'px';
     opts.toggleable = false;
 
     // Invoke Taketori when ready
